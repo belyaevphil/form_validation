@@ -1,0 +1,101 @@
+@import './normalize';
+@import './reset';
+@import './fonts';
+@import './mixins';
+@import './vars';
+
+body {
+  font-family: $mainRegularFont;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  @media (max-width: 1170px) {
+    max-width: 970px;
+  }
+  @media (max-width: 992px) {
+    max-width: 750px;
+  }
+  @media (max-width: 767px) {
+    max-width: none;
+  }
+}
+
+.header {
+  background-color: $headerBackgroundColor;
+  &__wrapper {
+    padding: $mainPadding;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    font-family: $mainBoldFont;
+    color: #ffffff;
+    font-size: 3.6rem;
+    @media (max-width: 767px) {
+      font-size: 2.4rem;
+    }
+  }
+}
+
+.menu-nav {
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__link {
+    color: #ffffff;
+    font-size: 1.8rem;
+  }
+}
+
+.main {
+  flex: 1 0 auto;
+  &__wrapper {
+    padding: $mainPadding;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  }
+  &__heading {
+    color: $mainFontColor;
+    font-size: 4.8rem;
+    text-align: center;
+  }
+  &__logo {
+    @include size(300px);
+  }
+  &__paragraph {
+    font-size: 2.4rem;
+    margin-top: 30px;
+    color: #070707;
+    text-align: center;
+  }
+  &__span {
+    color: $mainFontColor;
+  }
+}
+
+.footer {
+  background-color: $footerBackgroundColor;
+  flex-shrink: 0;
+  &__wrapper {
+    padding: $mainPadding;
+    display: flex;
+    justify-content: center;
+  }
+  &__content {
+    color: #ffffff;
+    font-size: 3.6rem;
+    @media (max-width: 767px) {
+      font-size: 2.4rem;
+    }
+  }
+}
