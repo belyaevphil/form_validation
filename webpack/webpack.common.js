@@ -12,7 +12,6 @@ const PATHS = {
 }
 
 const PAGES_DIR = `${PATHS.src}/pages`
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.hbs'))
 
 const getCopyPluginPatterns = () => {
   const patterns = []
@@ -57,10 +56,9 @@ module.exports = {
     }
   },
   plugins: [
-    ...PAGES.map(page => new HtmlWebpackPlugin({
-      template: `${PAGES_DIR}/${page}`,
-      filename: `${page.replace(/\.hbs/, '.html')}`
-    })),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/index.html`
+    }),
     new MiniCssExtractPlugin({
       filename: `[name].[contenthash].min.css`
     }),
@@ -71,11 +69,6 @@ module.exports = {
   ],
   module: {
     rules: [
-      {
-        test: /\.hbs$/,
-        loader: 'handlebars-loader',
-        exclude: /node_modules/
-      },
       {
         test: /\.(ts|tsx|js|jsx)$/,
         loader: 'babel-loader',
