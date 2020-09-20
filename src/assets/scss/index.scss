@@ -75,10 +75,5 @@ body {
   position: absolute;
   right: 0px;
   top: 20px;
-  &--success {
-    display: none;
-  }
-  &--error {
-    display: none;
-  }
+  display: none;
 }
