@@ -17,9 +17,9 @@
         <div class="form">
           <div class="form__title">Sign up</div>
           <div class="form__container">
-            <label class="form__field" for="email"
-              >E-mail<input class="form__input" id="email" type="text" />
-              <span class="form__error">Error message</span>
+            <label class="form__field" for="email-input"
+              >E-mail<input class="form__input" id="email-input" type="text" />
+              <span class="form__error" id="email-error-message"></span>
               <svg
                 class="icon"
                 id="email-success-icon"
@@ -53,8 +53,13 @@
                 />
               </svg>
             </label>
-            <label class="form__field" for="password"
-              >Password<input class="form__input" id="password" type="text" />
+            <label class="form__field" for="password-input"
+              >Password<input
+                class="form__input"
+                id="password-input"
+                type="text"
+              />
+              <span class="form__error" id="password-error-message"></span>
               <svg
                 class="icon"
                 id="password-success-icon"
@@ -88,12 +93,16 @@
                 />
               </svg>
             </label>
-            <label class="form__field" for="repeat-password"
+            <label class="form__field" for="repeat-password-input"
               >Repeat password<input
                 class="form__input"
-                id="repeat-password"
+                id="repeat-password-input"
                 type="text"
               />
+              <span
+                class="form__error"
+                id="repeat-password-error-message"
+              ></span>
               <svg
                 class="icon"
                 id="repeat-password-success-icon"
@@ -128,7 +137,9 @@
               </svg>
             </label>
           </div>
-          <button class="form__button">Sign up</button>
+          <button class="form__button" id="submit-button" disabled>
+            Sign up
+          </button>
         </div>
       </div>
     </main>

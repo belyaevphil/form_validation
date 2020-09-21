@@ -48,6 +48,7 @@ body {
     width: 350px;
     color: $mainFontColor;
     margin-top: 10px;
+    padding-right: 25px;
   }
   &__error {
     font-size: 1.8rem;
@@ -64,9 +65,14 @@ body {
     margin-top: 50px;
     color: $mainFontColor;
     background: none;
-    &:hover {
+    &:hover:enabled {
       color: #5628a6;
       background: #ffffff;
+    }
+    &:disabled {
+      color: #928e8e;
+      border-color: #928e8e;
+      cursor: not-allowed;
     }
   }
 }
@@ -74,6 +80,6 @@ body {
 .icon {
   position: absolute;
   right: 0px;
-  top: 20px;
+  top: 35px;
   display: none;
 }
