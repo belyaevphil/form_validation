@@ -1,4 +1,5 @@
 import { IFieldItems } from './interfaces';
+import { createPopup, openPopup, closePopup } from './popup';
 
 import '@/assets/scss';
 
@@ -155,8 +156,23 @@ const checkInputValue = (input: string): void => {
   else submitButton.disabled = true;
 };
 
+const closePopupWindow = (): void => {
+  const popupButton = document.querySelector(
+    '#pop-up__button'
+  ) as HTMLButtonElement;
+  popupButton.addEventListener('click', closePopup);
+};
+
+const submitForm = (): void => {
+  const popup = document.querySelector('.pop-up') as HTMLDivElement;
+  if (!popup) createPopup();
+  openPopup();
+  closePopupWindow();
+};
+
 emailInput.addEventListener('input', () => checkInputValue('E-mail'));
 passwordInput.addEventListener('input', () => checkInputValue('Password'));
 repeatPasswordInput.addEventListener('input', () =>
   checkInputValue('Repeat password')
 );
+submitButton.addEventListener('click', submitForm);
