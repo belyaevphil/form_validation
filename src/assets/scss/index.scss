@@ -85,6 +85,33 @@ body {
 }
 
 .pop-up {
+  &--opened &__overlay,
+  &--opened &__window {
+    opacity: 1;
+    z-index: 10;
+  }
+  &--hidden &__overlay,
+  &--hidden &__window {
+    opacity: 1;
+    z-index: 10;
+  }
+  &--opened &__window {
+    transform: translateY(310px);
+  }
+  &--opened &__overlay {
+    background: rgba($color: #000000, $alpha: 0.6);
+  }
+  &--hidden &__window {
+    transform: translateY(-310px);
+  }
+  &--hidden &__overlay {
+    background: rgba($color: #000000, $alpha: 0);
+  }
+  &__overlay,
+  &__window {
+    opacity: 0;
+    z-index: -1;
+  }
   &__overlay {
     position: fixed;
     top: 0;
@@ -107,33 +134,6 @@ body {
     width: 350px;
     background: #ffffff;
     height: 310px;
-  }
-  &__overlay,
-  &__window {
-    opacity: 0;
-    z-index: -1;
-  }
-  &--opened &__overlay,
-  &--opened &__window {
-    opacity: 1;
-    z-index: 10;
-  }
-  &--hidden &__overlay,
-  &--hidden &__window {
-    opacity: 1;
-    z-index: 10;
-  }
-  &--opened &__window {
-    transform: translateY(310px);
-  }
-  &--opened &__overlay {
-    background: rgba($color: #000000, $alpha: 0.6);
-  }
-  &--hidden &__window {
-    transform: translateY(-310px);
-  }
-  &--hidden &__overlay {
-    background: rgba($color: #000000, $alpha: 0);
   }
   &__title {
     margin-top: 25px;
