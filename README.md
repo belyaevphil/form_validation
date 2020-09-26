@@ -9,4 +9,4 @@ Technologies and tools were used to create this app:
 - TypeScript
 - Scss
 
-Simple on-every-input form validation with animated pop-up window.
+Simple on-every-input form validation with an animated pop-up window.
